@@ -1,7 +1,13 @@
 <?php 
-require __DIR__ . '../vendor/autoload.php';
+
+require '../vendor/autoload.php';
+
+use Kavenegar\KavenegarApi;
+use Kavenegar\Exceptions\ApiException;
+use Kavenegar\Exceptions\HttpException;
+
 try{
-	$api = new \Kavenegar\KavenegarApi("{ API Key } ");
+	$api = new KavenegarApi("{ API Key } ");
 	$senders = array("{ Sender Line #1}","{ Sender Line #2}");
 	$receptors = array("{ Receptor #1 }","{ Receptor #2 }");
 	$messages = array("{ Messages #1 }","{ Messages #2 }");
@@ -10,9 +16,9 @@ try{
 		var_dump($result);
 	}
 }
-catch(\Kavenegar\Exceptions\ApiException $e){
+catch(ApiException $e){
 	echo $e->errorMessage();
 }
-catch(\Kavenegar\Exceptions\HttpException $e){
+catch(HttpException $e){
 	echo $e->errorMessage();
 }

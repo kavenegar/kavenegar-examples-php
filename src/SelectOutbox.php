@@ -1,18 +1,24 @@
 <?php 
-require __DIR__ . '../vendor/autoload.php';
+
+require '../vendor/autoload.php';
+
+use Kavenegar\KavenegarApi;
+use Kavenegar\Exceptions\ApiException;
+use Kavenegar\Exceptions\HttpException;
+
 try{
-	$api = new \Kavenegar\KavenegarApi("{ API Key }");
+	$api = new KavenegarApi("{ API Key }");
 	$startdate = (new DateTime('2015-07-1'))->getTimestamp();
 	$enddate = (new DateTime('2015-07-30'))->getTimestamp();
-	$defaultsender = "{ Sender Line }";
+	$sender = "{ Sender Line }";
 	$result = $api->SelectOutbox($startdate,$enddate,$sender);		
 	if($result){
 		var_dump($result);
 	}
 }
-catch(\Kavenegar\Exceptions\ApiException $e){
+catch(ApiException $e){
 	echo $e->errorMessage();
 }
-catch(\Kavenegar\Exceptions\HttpException $e){
+catch(HttpException $e){
 	echo $e->errorMessage();
 }

@@ -7,11 +7,14 @@ use Kavenegar\Exceptions\ApiException;
 use Kavenegar\Exceptions\HttpException;
 
 try{
-	$api = new KavenegarApi("Your API Key");
-	$startdate = (new DateTime('2015-07-1'))->getTimestamp();
-	$enddate = (new DateTime('2015-07-30'))->getTimestamp();
-	$sender = "Your Sender";
-	$result = $api->SelectOutbox($startdate,$enddate,$sender);		
+	$api = new KavenegarApi("{ API Key }");
+	$receptor = "{ Receptor }";
+	$token = "";
+	$token2 = "";
+	$token3 = "";
+	$template = "{ Template }";
+	$type = "call";
+	$result = $api->VerifyLookup($receptor,$token,$token2,$token3,$template,$type);
 	if($result){
 		var_dump($result);
 	}

@@ -1,21 +1,28 @@
 <?php 
-require __DIR__ . '../vendor/autoload.php';
+require  '/vendor/autoload.php';
+
+use Kavenegar\KavenegarApi;
+use Kavenegar\Exceptions\ApiException;
+use Kavenegar\Exceptions\HttpException;
+use Kavenegar\Enums\ApiLogs;
+use Kavenegar\Enums\General;
+
 try{
-	$api = new \Kavenegar\KavenegarApi("{ API Key }");
-	$apilogs=\Kavenegar\Enums\ApiLogs::Justforfault;
-	$dailyreport = \Kavenegar\Enums\General::Enabled;
-	$debugmode =\Kavenegar\Enums\General::Enabled;
+	$api = new KavenegarApi("{ API Key }");
+	$apilogs=ApiLogs::Justforfault;
+	$dailyreport = General::Enabled;
+	$debugmode =General::Enabled;
 	$defaultsender = "{ Sender Line }";
 	$mincreditalarm= 5000;
-	$resendfailed= \Kavenegar\Enums\General::Enabled;
+	$resendfailed= General::Enabled;
 	$result = $api->AccountConfig($apilogs,$dailyreport,$debugmode,$defaultsender,$mincreditalarm,$resendfailed);
 	if($result){
 		var_dump($result);
 	}
 }
-catch(\Kavenegar\Exceptions\ApiException $e){
+catch(ApiException $e){
 	echo $e->errorMessage();
 }
-catch(\Kavenegar\Exceptions\HttpException $e){
+catch(HttpException $e){
 	echo $e->errorMessage();
 }
