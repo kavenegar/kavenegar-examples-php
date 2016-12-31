@@ -5,10 +5,6 @@ Installation
 ```php
 $ composer update
 ```
-Basic setup
------
-Configuration
------
 Usage
 -----
 ```php
