@@ -26,12 +26,12 @@ class KavenegarApi
         $this->apiKey = $apiKey;
     }   
     
-	private function get_path($method, $base = 'sms')
+	protected function get_path($method, $base = 'sms')
     {
         return sprintf(self::APIPATH, $this->apiKey, $base, $method);
     }
 	
-	private function execute($url, $data = null)
+	protected function execute($url, $data = null)
     {        
         $headers       = array(
             'Accept: application/json',
@@ -260,16 +260,22 @@ class KavenegarApi
     
     public function VerifyLookup($receptor, $token, $token2, $token3, $template, $type = null)
     {
+        return VerifyLookupV2($receptor, $template, $type, $token, $token2, $token3, null);
+    }  
+
+    public function VerifyLookupV2($receptor, $template, $type = null, $token, $token2, $token3, $token10)
+    {
         $path   = $this->get_path("lookup", "verify");
         $params = array(
+            "template" => $template,
             "receptor" => $receptor,
             "token" => $token,
             "token2" => $token2,
             "token3" => $token3,
-            "template" => $template,
+            "token10" => $token10,
             "type" => $type
         );
         return $this->execute($path, $params);
-    }     
+    }   
 }
 ?>
