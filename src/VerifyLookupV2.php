@@ -15,7 +15,7 @@ try{
 	$token2 = "";
 	$token3 = "";
 	$token10 = "";
-	$result = $api->VerifyLookup2($receptor,$template,$type,$token,$token2,$token3,$token10);
+	$result = $api->VerifyLookupV2($receptor,$template,$type,$token,$token2,$token3,$token10);
 	if($result){
 		var_dump($result);
 	}
