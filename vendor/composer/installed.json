@@ -6,18 +6,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/KaveNegar/kavenegar-php.git",
-            "reference": "826a4163dd0eaf5ba6b7be3bb24b93cf53c95026"
+            "reference": "fcb1756ac7f31e982e5fab242d2f573a13d71bc6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/KaveNegar/kavenegar-php/zipball/826a4163dd0eaf5ba6b7be3bb24b93cf53c95026",
-            "reference": "826a4163dd0eaf5ba6b7be3bb24b93cf53c95026",
+            "url": "https://api.github.com/repos/KaveNegar/kavenegar-php/zipball/fcb1756ac7f31e982e5fab242d2f573a13d71bc6",
+            "reference": "fcb1756ac7f31e982e5fab242d2f573a13d71bc6",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4.0"
         },
-        "time": "2017-05-08T07:19:04+00:00",
+        "time": "2017-05-08T07:38:09+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
