@@ -11,8 +11,8 @@ use Kavenegar\Enums\General;
 class KavenegarApi
 {
     protected $apiKey;
-    const APIPATH = "http://api.kavenegar.com/v1/%s/%s/%s.json/";
-    const VERSION = "1.0.0";
+    const APIPATH = "https://api.kavenegar.com/v1/%s/%s/%s.json/";
+    const VERSION = "1.1.0";
     public function __construct($apiKey)
     {
         if (!extension_loaded('curl')) {
@@ -257,25 +257,38 @@ class KavenegarApi
         );
         return $this->execute($path, $params);
     }
-    
-    public function VerifyLookup($receptor, $token, $token2, $token3, $template, $type = null)
-    {
-        return $this->VerifyLookupV2($receptor, $template, $type, $token, $token2, $token3, null);
-    }  
 
-    public function VerifyLookupV2($receptor, $template, $type = null, $token, $token2, $token3, $token10)
+    public function VerifyLookup($receptor, $token, $token2, $token3, $template, $type = null)
     {
         $path   = $this->get_path("lookup", "verify");
         $params = array(
-            "template" => $template,
             "receptor" => $receptor,
             "token" => $token,
             "token2" => $token2,
             "token3" => $token3,
-            "token10" => $token10,
+            "template" => $template,
             "type" => $type
         );
-        return $this->execute($path, $params);
-    }   
+        if(func_num_args()>5){
+            $arg_list = func_get_args();
+            if(isset($arg_list[6]))
+                $params["token10"]=$arg_list[6];
+            if(isset($arg_list[7]))
+                $params["token20"]=$arg_list[7];
+        } 
+        return $this->execute($path, $params); 
+    }  
+
+    public function CallMakeTTS($receptor, $message, $date = null, $localid = null)
+    {
+        $path   = $this->get_path("maketts", "call");
+        $params = array(
+            "receptor" => $receptor,
+            "message" => $message,
+            "date" => $date,
+            "localid" => $localid
+        );
+        return $this->execute($path, $params); 
+    }
 }
 ?>

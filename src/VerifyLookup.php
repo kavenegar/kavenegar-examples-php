@@ -7,13 +7,14 @@ use Kavenegar\Exceptions\ApiException;
 use Kavenegar\Exceptions\HttpException;
 
 try{
-	$api = new KavenegarApi("{ API Key }");
-	$receptor = "{ Receptor }";
+	$api = new KavenegarApi("your apikey here");
+	$receptor = "";
 	$token = "";
 	$token2 = "";
 	$token3 = "";
-	$template = "{ Template }";
-	$result = $api->VerifyLookup($receptor,$token,$token2,$token3,$template);
+	$template = "";
+	$type = "sms";//sms | call
+	$result = $api->VerifyLookup($receptor,$token,$token2,$token3,$template,$type);
 	if($result){
 		var_dump($result);
 	}

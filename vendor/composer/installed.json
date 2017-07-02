@@ -1,23 +1,23 @@
 [
     {
         "name": "kavenegar/php",
-        "version": "v1.1.4",
-        "version_normalized": "1.1.4.0",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/KaveNegar/kavenegar-php.git",
-            "reference": "fcb1756ac7f31e982e5fab242d2f573a13d71bc6"
+            "reference": "12fff55bedcf4cdefb67e746b8c8b45e8a35a0cf"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/KaveNegar/kavenegar-php/zipball/fcb1756ac7f31e982e5fab242d2f573a13d71bc6",
-            "reference": "fcb1756ac7f31e982e5fab242d2f573a13d71bc6",
+            "url": "https://api.github.com/repos/KaveNegar/kavenegar-php/zipball/12fff55bedcf4cdefb67e746b8c8b45e8a35a0cf",
+            "reference": "12fff55bedcf4cdefb67e746b8c8b45e8a35a0cf",
             "shasum": ""
         },
         "require": {
             "php": ">=5.4.0"
         },
-        "time": "2017-05-08T07:38:09+00:00",
+        "time": "2017-07-02T09:22:08+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

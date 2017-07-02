@@ -7,14 +7,12 @@ use Kavenegar\Exceptions\ApiException;
 use Kavenegar\Exceptions\HttpException;
 
 try{
-	$api = new KavenegarApi("{ API Key }");
-	$receptor = "{ Receptor }";
-	$token = "";
-	$token2 = "";
-	$token3 = "";
-	$template = "{ Template }";
-	$type = "call";
-	$result = $api->VerifyLookup($receptor,$token,$token2,$token3,$template,$type);
+	$api = new KavenegarApi("your apikey here");
+	$receptor = "";
+	$message = "";
+	$date = "";
+	$localid = "";
+	$result = $api->CallMakeTTS($receptor,$message,$date,$localid);
 	if($result){
 		var_dump($result);
 	}
