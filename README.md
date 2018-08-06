@@ -24,7 +24,7 @@ Well, There is an example to Send SMS by PHP.
 require __DIR__ . '/vendor/autoload.php';
 
 try{
-	$api = new \Kavenegar\KavenegarApi({ "API Key" });
+	$api = new \Kavenegar\KavenegarApi("Your APIKEY Here");
 	$sender = "10004346";
 	$message = "خدمات پیام کوتاه کاوه نگار";
 	$receptor = array("09123456789","09367891011");
